@@ -110,7 +110,7 @@ function draw() {
 
   fill("#6d4c41");
   textSize(40);
-  text(`Score:${score}`, width - 200, 50);
+  text(`Puntuación:${score}`, width - 200, 50);
   textAlign(CENTER, CENTER);
 }
 
@@ -163,7 +163,7 @@ function showBoats() {
       boats[i].animate();
       var collision = Matter.SAT.collides(tower.body, boats[i].body);
       if (collision.collided && !boats[i].isBroken) {
-         //Added isLaughing flag and setting isLaughing to true
+         //Se agregó la bandera isLaughing y se estableció isLaughing en true
          if(!isLaughing && !pirateLaughSound.isPlaying()){
           pirateLaughSound.play();
           isLaughing = true
@@ -188,12 +188,12 @@ function keyReleased() {
 function gameOver() {
   swal(
     {
-      title: `Game Over!!!`,
-      text: "Thanks for playing!!",
+      title: `¡Fin del juego!`,
+      text: "¡Gracias por jugar!",
       imageUrl:
         "https://raw.githubusercontent.com/whitehatjr/PiratesInvasion/main/assets/boat.png",
       imageSize: "150x150",
-      confirmButtonText: "Play Again"
+      confirmButtonText: "Jugar otra vez"
     },
     function(isConfirm) {
       if (isConfirm) {
